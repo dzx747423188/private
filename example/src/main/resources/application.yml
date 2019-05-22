@@ -1,0 +1,9 @@
+mybatis:
+  type-aliases-package: com.point.kmss.example.pojo
+  mapper-locations: classpath:mapper/*xml
+spring:
+  datasource:
+    data-username: root
+    data-password: root
+    url: jdbc:mysql://localhost:3306/park?characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
