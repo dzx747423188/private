@@ -1,9 +1,17 @@
 mybatis:
-  type-aliases-package: com.point.kmss.example.pojo
-  mapper-locations: classpath:mapper/*xml
+  type-aliases-package: com.point.kmss.example.models
+  mapper-locations: classpath:mapper/*.xml
 spring:
   datasource:
     data-username: root
     data-password: root
     url: jdbc:mysql://localhost:3306/park?characterEncoding=utf-8
     driver-class-name: com.mysql.jdbc.Driver
+  #thymeleaf 配置，取消缓存，这样子就可以在只修改完html后ctrl+f9重新build一下
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+  mvc:
+    static-path-pattern: /**
+    servlet:
+      load-on-startup: 1

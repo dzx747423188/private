@@ -39,7 +39,7 @@
       )
     values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{question,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, 
-      #{role,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      #{role,jdbcType=INTEGER}, now(), now()
       )
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.point.kmss.example.models.MmallUser">
@@ -78,4 +78,14 @@
     update_time
     from mmall_user
   </select>
+
+  <select id="selectByUsername" parameterType="String" resultType="int">
+    select count(1) from mmall_user where username = #{username}
+  </select>
+
+  <select id="selectByEmail" parameterType="String" resultType="int">
+
+    select count(1) from mmall_user where email = #{email}
+  </select>
+
 </mapper>

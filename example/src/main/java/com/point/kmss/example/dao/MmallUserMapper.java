@@ -43,4 +43,14 @@ public interface MmallUserMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(MmallUser record);
+
+    /**
+     * 根据用户名查询
+     */
+    int selectByUsername(String username);
+    /**
+     * 根据邮箱查询
+     */
+    int selectByEmail(String email);
+
 }
